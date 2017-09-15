@@ -1,0 +1,40 @@
+connector.allowed.credentials: test-178426:UjGijecbU8w5hm34
+
+# Spring logging
+logging.level.root: INFO
+logging.level.org.springframework.web: INFO
+logging.level.org.hibernate: ERROR
+logging.file: log/spring/log
+
+# Tomcat logging
+server:
+  tomcat:
+    accessLog:
+      enabled: true
+      # Format pattern for access logs:
+      # https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html#Access_Log_Valve
+      pattern: '%h %l %u %t "%r" %s %b %D %{Authorization}i'
+      directory: tomcat
+    basedir: ./log
+
+
+
+endpoints:
+  enabled: true
+  info:
+    enabled: true
+    sensitive: false
+  health:
+      enabled: true
+      sensitive: false
+      time-to-live: 5000
+
+info:
+  build:
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+management:
+  security:
+    enabled: false
