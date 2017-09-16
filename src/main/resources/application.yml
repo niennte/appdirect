@@ -1,4 +1,4 @@
-connector.allowed.credentials: test-178426:UjGijecbU8w5hm34
+connector.allowed.credentials: developer-key:developer-secret
 
 # Spring logging
 logging.level.root: INFO
@@ -31,9 +31,9 @@ endpoints:
 
 info:
   build:
-    name: @project.name@
-    description: @project.description@
-    version: @project.version@
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
 
 management:
   security:
